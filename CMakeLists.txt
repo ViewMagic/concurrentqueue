@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.10)
 project(concurrentqueue VERSION 1.0.0)
 
 include(GNUInstallDirs)
@@ -57,9 +57,17 @@ install(
                 blockingconcurrentqueue.h 
                 concurrentqueue.h 
                 lightweightsemaphore.h 
-                LICENSE.md
         DESTINATION 
                 ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/moodycamel
+)
+
+install(
+        FILES 
+                LICENSE.md
+        DESTINATION 
+                ${CMAKE_INSTALL_DATADIR}/concurrentqueue
+        RENAME
+                copyright
 )
 
 set(CPACK_PACKAGE_NAME ${PROJECT_NAME})
